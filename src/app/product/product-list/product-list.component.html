@@ -1,20 +1,17 @@
 <div class="container">
   <br />
   <div class="row">
-    <div *ngFor="let product of products;" class="col-sm">
+    <div *ngFor="let product of products; index as productId" class="col-sm">
         <div class="card">
           <img
-            src="../../assets/images/placeholder.png"
+            src="{{ product.coverimage }}"
             class="card-img-top"
             alt=""
           />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a [routerLink]="['detail']" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">{{product.description}}</p>
+            <a [routerLink]="[productId]" class="btn btn-primary">Details</a>
           </div>
         </div>
   </div>
