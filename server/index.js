@@ -16,9 +16,6 @@ mongoose.connect(config.DB_URI, {
 
 app.use("/api/v1/products", productRoutes);
 
-app.get("/products", (req, res) => {
-  res.json({ success: true });
-});
 
 const PORT = process.env.PORT || 3001;
 
