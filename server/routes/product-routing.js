@@ -4,7 +4,7 @@ const Product = require("../model/product");
 
 router.get("", (req, res) => {
   Product.find({}, (err, foundProducts) => {
-    res.json({ foundProducts });
+    res.json( foundProducts );
   });
 });
 
@@ -14,7 +14,7 @@ router.get("/:productId", (req, res) => {
     if (err) {
       return res.status(422).send({errors: [{title: "Product error", detail: "Product not Found..."}]})
     }
-    return res.json({ foundProduct });
+    return res.json( foundProduct );
   });
 });
 
